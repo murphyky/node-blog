@@ -13,8 +13,10 @@ block content
 							a(href="#") {{article.title}}
 						p.lead by
 							a(href="index.html") {{article.author || 'Kyle Murphy'}}
-						
-						img.img-responsive(src="http://placehold.it/900x300" alt="")
+						p
+							span.glyphicon.glyphicon-time Posted on {{article.date}}
+						hr
+						//img.img-responsive(src="http://placehold.it/900x300" alt="")
 						hr
 						p {{article.text}}
 						a.btn.btn-primary(href="#") Read More
@@ -26,6 +28,5 @@ block content
 								a(href="#")&larr; Older
 							li.next
 								a(href="#") Newer &rarr;
-
 
 	script(src='/blog.js')
