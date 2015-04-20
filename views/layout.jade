@@ -9,4 +9,7 @@ html(ng-app="#{app}")
 		script(src='/angular-route.min.js')
 	body
 		nav.navbar.navbar-inverse.navbar-fixed-top
-		block content
+			div.container
+				div.navbar-header
+					button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#bs-navbar-collapse-1")
+						block content
