@@ -1,3 +1,3 @@
 module.exports = function(req, res, next) {
-	res.render("about", {app: "main"});
+	res.render("list", {app: "main"});
 }
