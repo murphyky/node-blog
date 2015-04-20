@@ -2,8 +2,11 @@ doctype html
 html(ng-app="#{app}")
 	head
 		title Blog
+		link(rel='stylesheet', href='/bootstrap.min.css')
 		link(rel='stylesheet', href='/style.css')
+		script(src='/jquery.min.js')
 		script(src='/angular.min.js')
 		script(src='/angular-route.min.js')
 	body
+		nav.navbar.navbar-inverse.navbar-fixed-top
 		block content
