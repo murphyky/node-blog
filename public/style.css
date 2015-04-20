@@ -1,3 +1,4 @@
 body, html {
 	overflow-y: auto;
+	height: auto;
 }
