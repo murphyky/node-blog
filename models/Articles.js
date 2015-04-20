@@ -31,6 +31,7 @@ module.exports = function() {
                 }, {
                     text: data.text,
                     title: data.title,
+                    author: data.author,
                     id: data.id
                 }, {},
                 callback || function() {});

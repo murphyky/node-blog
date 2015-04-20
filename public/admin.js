@@ -5,6 +5,8 @@ var AddEditRoute = {
         <hr />\
         <article>\
             <form>\
+                <span>Author</span><br  />\
+                <input type="text" ng-model="article.author"/><br />\
                 <span>Title</spna><br />\
                 <input type="text" ng-model="article.title"/><br />\
                 <span>Text</spna><br />\
