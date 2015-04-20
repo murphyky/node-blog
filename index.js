@@ -47,8 +47,8 @@ app.post('/api/add', protect, require("./controllers/api/add"));
 app.post('/api/edit', protect, require("./controllers/api/edit"));
 app.post('/api/delete', protect, require("./controllers/api/delete"));
 app.all('/admin', require("./controllers/admin"));
-app.get('/api/about', require("./controllers/about"));
-app.get('/api/contact', require("./controllers/contact"));
+app.get('/about', require("./controllers/about"));
+app.get('/contact', require("./controllers/contact"));
 app.get('/', require("./controllers/index"));
 
 app.listen(80, function(){
