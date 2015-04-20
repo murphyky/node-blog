@@ -2,3 +2,7 @@ body, html {
 	overflow-y: scroll;
 	height: auto;
 }
+
+#blog-content{
+	margin-top: 3em;
+}
