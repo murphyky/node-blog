@@ -4,6 +4,7 @@ var articles = require("./models/Articles")();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var logger = require('morgan');
 
 app.set('views', __dirname + "/views");
 app.set('view engine', 'jade');
@@ -17,6 +18,8 @@ app.use(function(req, res, next) {
     req.articles = articles;
     next();
 });
+
+app.use(logger());
 
 app.use(function(req, res, next) {
     if((
