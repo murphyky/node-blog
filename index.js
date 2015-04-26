@@ -46,8 +46,8 @@ var protect = function(req, res, next) {
 		res.send(401, 'No Access.');
 	}
 }
-app.get('contact', require('./controllers/contact'));
-app.get('about', require('./controllers/about'));
+app.all('/contact', require('./controllers/contact'));
+app.all('/about', require('./controllers/about'));
 app.get('/api/get', require("./controllers/api/get"));
 app.post('/api/add', protect, require("./controllers/api/add"));
 app.post('/api/edit', protect, require("./controllers/api/edit"));
