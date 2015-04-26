@@ -4,7 +4,8 @@ var articles = require("./models/Articles")();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var logger = require('morgan');
+var morgan = require('morgan');
+var fs = require('fs');
 
 app.set('views', __dirname + "/views");
 app.set('view engine', 'jade');
@@ -46,8 +47,8 @@ var protect = function(req, res, next) {
 		res.send(401, 'No Access.');
 	}
 }
-app.all('/contact', require('./controllers/contact'));
-app.all('/about', require('./controllers/about'));
+app.get('/contact', require('./controllers/contact'));
+app.get('/about', require('./controllers/about'));
 app.get('/api/get', require("./controllers/api/get"));
 app.post('/api/add', protect, require("./controllers/api/add"));
 app.post('/api/edit', protect, require("./controllers/api/edit"));
