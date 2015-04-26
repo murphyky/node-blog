@@ -19,7 +19,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(logger());
 
 app.use(function(req, res, next) {
     if((
@@ -36,6 +35,9 @@ app.use(function(req, res, next) {
     next();
 });
 
+var accessLogStream = fs.createWriteStream(__dirname + '/access.log',{flags:'a'})
+
+app.use(morgan('combined',{stream:accessLogStream}))
 
 var protect = function(req, res, next) {
 	if(req.logged) {
