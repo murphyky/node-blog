@@ -41,17 +41,16 @@ var protect = function(req, res, next) {
 		res.send(401, 'No Access.');
 	}
 }
-
+app.get('/contact', require('./controllers/contact'));
+app.get('/about', require('./controllers/about'));
 app.get('/api/get', require("./controllers/api/get"));
 app.post('/api/add', protect, require("./controllers/api/add"));
 app.post('/api/edit', protect, require("./controllers/api/edit"));
 app.post('/api/delete', protect, require("./controllers/api/delete"));
 app.all('/admin', require("./controllers/admin"));
-app.get('/about', require("./controllers/about"));
-app.get('/contact', require("./controllers/api/contact"));
 app.get('/', require("./controllers/index"));
 
-app.listen(80, function(){
+app.listen(8880, function(){
 	process.setuid('www-data');
 });
 console.log("Listening on port 80");

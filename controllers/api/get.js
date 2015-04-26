@@ -1,5 +1,12 @@
 module.exports = function(req, res, next) {
-	req.articles.get(function(rows) {
-		res.send(rows);
-	});
+	console.log(req.path)
+    if (req.path == 'contact') {
+        res.render("contact", {
+            app: "main"
+        });
+    } else {
+        req.articles.get(function(rows) {
+            res.send(rows);
+        });
+    }
 }
