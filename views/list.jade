@@ -4,9 +4,9 @@ block content
 		div.row
 			div.col-md-8
 				h1.page-header Blog Test
-					small.search.pull-right
-						input(type="text", placeholder="type a filter here", ng-model="filterText")
-					hr
+				small.search.pull-right
+					input(type="text", placeholder="type a filter here", ng-model="filterText")
+				hr
 				section.articles
 					article(ng-repeat="article in articles | filter:filterText")
 						h2
