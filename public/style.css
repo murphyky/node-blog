@@ -81,6 +81,10 @@ fieldset{
   resize:none;
 }
 
+#blog-content{
+	margin: 2.5em auto 0;
+}
+
 #contact button[type="submit"] {
 	cursor:pointer;
 	width:100%;
