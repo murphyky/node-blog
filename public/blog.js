@@ -1,4 +1,4 @@
-angular.module("main",[])
+angular.module("main")
 .controller('BlogCtrl', ['$scope', '$http', function($scope, $http){
     $scope.articles = [
         {title: "",text: "Loading..."}
