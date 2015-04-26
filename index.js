@@ -55,7 +55,7 @@ app.post('/api/delete', protect, require("./controllers/api/delete"));
 app.all('/admin', require("./controllers/admin"));
 app.get('/', require("./controllers/index"));
 
-app.listen(80, function(){
+app.listen(process.env.NODE_PORT || 8880, function(){
 	process.setuid('www-data');
 });
 console.log("Listening on port 80");
