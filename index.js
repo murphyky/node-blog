@@ -15,7 +15,7 @@ app.set("username", "admin");
 app.set("password", "pass");
 app.use(cookieParser('blog-application'));
 app.use(session());
-app.use(require('less-middleware')({src: __dirname+'/public'}));
+//app.use(require('less-middleware')({src: __dirname+'/public'}));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(function(req, res, next) {
     req.articles = articles;
