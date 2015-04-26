@@ -5,5 +5,15 @@ block content
 			div.col-md-8
 				h1.page-header Contact
 
-				section
-					| Hi
+				section.container
+					header
+						h1 Send me a message!
+					div.name
+						input.first(type="text",placeholder="First Name")
+						input.last(type="text",placeholder="Last Name")
+					div.contact
+						input.email(type="text",placeholder="E-mail address")
+					div.message
+						textarea(placeholder="Your Suggestions Here!")
+					footer
+						button Send Suggestion

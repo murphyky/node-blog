@@ -6,6 +6,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var fs = require('fs');
+var path = require('path');
 
 app.set('views', __dirname + "/views");
 app.set('view engine', 'jade');
@@ -14,7 +15,8 @@ app.set("username", "admin");
 app.set("password", "pass");
 app.use(cookieParser('blog-application'));
 app.use(session());
-app.use(express.static(__dirname + '/public'));
+app.use(require('less-middleware')({src: __dirname+'/public'}));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
     req.articles = articles;
     next();
@@ -60,3 +62,5 @@ app.listen(process.env.NODE_PORT || 80, function(){
 	process.setuid('www-data');
 });
 console.log("Listening on port 80");
+
+
